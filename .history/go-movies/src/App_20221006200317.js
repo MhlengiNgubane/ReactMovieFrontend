@@ -4,6 +4,7 @@ import Movies from './components/Movies';
 import Home from './components/Home';
 import Admin from './components/Admin';
 
+
 export default function App() {
   return (
     <Router>

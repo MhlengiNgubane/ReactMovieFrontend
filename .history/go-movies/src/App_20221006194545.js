@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Movies from './components/Movies';
 import Home from './components/Home';
 import Admin from './components/Admin';
+import N from './components/Admin';
 
 export default function App() {
   return (

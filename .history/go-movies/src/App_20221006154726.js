@@ -34,14 +34,13 @@ export default function App() {
               <Route path="/movies">
                 <Movies />
               </Route>
-              
+              <Route path="/">
+                <Home />
+              </Route>
               <Route path="/admin">
                 <Admin />
               </Route>
               
-              <Route path="/">
-                <Home />
-              </Route>
             </Switch>
           </div>
         </div>

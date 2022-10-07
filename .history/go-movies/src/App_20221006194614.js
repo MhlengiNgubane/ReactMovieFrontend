@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Movies from './components/Movies';
 import Home from './components/Home';
 import Admin from './components/Admin';
+import Navbar from './components/Navbar';
 
 export default function App() {
   return (
     <Router>
+      <Nav
       <div className="container">
         <div className="row">
           <h1 className="mt-3">Go Movies</h1>

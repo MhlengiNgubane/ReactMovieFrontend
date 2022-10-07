@@ -39,9 +39,7 @@ export default function App() {
                 <Admin />
               </Route>
               
-              <Route path="/">
-                <Home />
-              </Route>
+              
             </Switch>
           </div>
         </div>

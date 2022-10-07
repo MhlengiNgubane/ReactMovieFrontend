@@ -31,17 +31,13 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies">
-                <Movies />
+              <Route path="/">
+                <Home />
               </Route>
-              
               <Route path="/admin">
                 <Admin />
               </Route>
               
-              <Route path="/">
-                <Home />
-              </Route>
             </Switch>
           </div>
         </div>

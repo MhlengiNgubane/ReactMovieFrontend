@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Movies from './components/Movies';
-import Home from './components/Home';
+import Home from './components/Movies';
 import Admin from './components/Admin';
 
 export default function App() {
@@ -31,16 +31,14 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies">
-                <Movies />
+              <Route path="/">
+                <Home />
               </Route>
-              
               <Route path="/admin">
                 <Admin />
               </Route>
-              
-              <Route path="/">
-                <Home />
+              <Route path="/movies">
+                <Movies />
               </Route>
             </Switch>
           </div>
@@ -50,3 +48,14 @@ export default function App() {
   );
 }
 
+function Home() {
+  return (
+    <h2>Home</h2>
+  );
+}
+
+function Admin() {
+  return (
+    <h2>Manage Catalogue</h2>
+  );
+}
