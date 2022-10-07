@@ -22,7 +22,7 @@ export default class Movies extends Component {
                 <ul>
                     {this.state.movies.map( (m) => (
                         <li key={m.id}>
-                            {m.title}
+                            <Link to={`{m.title}`}
                         </li>
                     ))}
                 </ul>

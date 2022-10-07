@@ -31,9 +31,7 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies:id">
-                <Movie />
-              </Route>
+              <Route path="/movies:id"></Rout
               <Route path="/movies">
                 <Movies />
               </Route>
@@ -53,6 +51,3 @@ export default function App() {
   );
 }
 
-function Movie() {
-  return
-}

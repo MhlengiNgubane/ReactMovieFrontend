@@ -53,6 +53,4 @@ export default function App() {
   );
 }
 
-function Movie() {
-  return
-}
+function Movie
