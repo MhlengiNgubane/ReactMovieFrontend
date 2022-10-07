@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
 } from "react-router-dom";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import Movies from "./components/Movies";
@@ -42,7 +43,7 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies/:id" component={OneMovie} />
+              <Route path="/movies:id" component={OneMovie} />
               <Route path="/movies">
                 <Movies />
               </Route>

@@ -4,13 +4,15 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
 } from "react-router-dom";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import Movies from "./components/Movies";
 import Home from "./components/Home";
 import Admin from "./components/Admin";
 import Categories from "./components/Categories";
-import OneMovie from "./components/OneMovie";
+import  from "./components/Categories";
+
 
 export default function App() {
   return (
@@ -42,7 +44,7 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies/:id" component={OneMovie} />
+              <Route path="/movies:id" component={OneMovie} />
               <Route path="/movies">
                 <Movies />
               </Route>

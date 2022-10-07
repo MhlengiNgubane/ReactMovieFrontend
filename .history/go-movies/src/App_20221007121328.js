@@ -4,13 +4,12 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
 } from "react-router-dom";
-import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import Movies from "./components/Movies";
 import Home from "./components/Home";
 import Admin from "./components/Admin";
 import Categories from "./components/Categories";
-import OneMovie from "./components/OneMovie";
 
 export default function App() {
   return (
@@ -42,7 +41,9 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies/:id" component={OneMovie} />
+              <Route path="/movies/:id">
+                <Movie />
+              </Route>
               <Route path="/movies">
                 <Movies />
               </Route>
@@ -82,23 +83,31 @@ export default function App() {
   );
 }
 
+function Movie() {
+  let { id } = useParams();
+  return (
+    <div>
+      <h2>Movie id {id}</h2>
+    </div>
+  );
+}
 
 function CategoryPage() {
 
-  const { path } = useRouteMatch();
+  const { path } = useLocation();
   return (
     <div>
       <h2>Categories</h2>
 
       <ul>
         <li>
-          <Link to={`${path}/comedy`}>Comedy</Link>
+          <Link to={`/by-category/comedy`}>Comedy</Link>
         </li>
         <li>
           <Link to={`${path}/drama`}>Drama</Link>
         </li>
         <li>
-          <Link to={`${path}/action`}>Action</Link>
+          <Link to={`/by-category/action`}>Action</Link>
         </li>
       </ul>
     </div>

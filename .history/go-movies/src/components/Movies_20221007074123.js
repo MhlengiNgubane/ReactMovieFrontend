@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from "react-router-dom";
 
 export default class Movies extends Component {
     
@@ -23,7 +22,7 @@ export default class Movies extends Component {
                 <ul>
                     {this.state.movies.map( (m) => (
                         <li key={m.id}>
-                            <Link to={`/movies/${m.id}`}>{m.title}</Link>
+                            <Link to={`/movies/${m.id}`}>{m.title}
                         </li>
                     ))}
                 </ul>

@@ -4,13 +4,13 @@ import {
   Switch,
   Route,
   Link,
+  useParams,
+  useRouteMatch,
 } from "react-router-dom";
-import { useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
 import Movies from "./components/Movies";
 import Home from "./components/Home";
 import Admin from "./components/Admin";
 import Categories from "./components/Categories";
-import OneMovie from "./components/OneMovie";
 
 export default function App() {
   return (
@@ -42,7 +42,9 @@ export default function App() {
           </div>
           <div className="col-md-10">
             <Switch>
-              <Route path="/movies/:id" component={OneMovie} />
+              <Route path="/movies:id">
+                <Movie />
+              </Route>
               <Route path="/movies">
                 <Movies />
               </Route>
@@ -58,14 +60,8 @@ export default function App() {
 
               <Route
                 exact
-                path="/by-category/action"
-                render={(props) => <Categories {...props} title={`Action`} />}
-              />
-
-              <Route
-                exact
-                path="/by-category/comedy"
-                render={(props) => <Categories {...props} title={`Comedy`} />}
+                path="/by-category/"
+                render={(props) => <Categories {...props} title={`Drama`} />}
               />
 
               <Route path="/admin">
@@ -82,23 +78,26 @@ export default function App() {
   );
 }
 
+function Movie() {
+  let { id } = useParams();
+
+  return <h2>Movie id {id}</h2>;
+}
 
 function CategoryPage() {
-
-  const { path } = useRouteMatch();
   return (
     <div>
       <h2>Categories</h2>
 
       <ul>
         <li>
-          <Link to={`${path}/comedy`}>Comedy</Link>
+          <Link to={`/by-category/comedy`}>Comedy</Link>
         </li>
         <li>
-          <Link to={`${path}/drama`}>Drama</Link>
+          <Link to={`/by-category/drama`}>Drama</Link>
         </li>
         <li>
-          <Link to={`${path}/action`}>Action</Link>
+          <Link to={`/by-category/action`}>Action</Link>
         </li>
       </ul>
     </div>
