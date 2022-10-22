@@ -5,7 +5,6 @@ export default class Movies extends Component {
   state = {
     movies: [],
     isLoaded: false,
-    error: null,
   };
 
   componentDidMount() {
@@ -20,7 +19,7 @@ export default class Movies extends Component {
   }
 
   render() {
-    const { movies, isLoaded, error } = this.state;
+    const { movies, isLoaded } = this.state;
 
     if (!isLoaded) {
       return <p>Loading...</p>;
@@ -30,7 +29,7 @@ export default class Movies extends Component {
           <h2>Choose Movie</h2>
 
           <ul>
-            {movies.map((m) => (
+            {this.state.movies.map((m) => (
               <li key={m.id}>
                 <Link to={`/movies/${m.id}`}>{m.title}</Link>
               </li>

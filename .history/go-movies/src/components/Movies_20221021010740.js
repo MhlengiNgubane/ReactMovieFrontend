@@ -5,7 +5,7 @@ export default class Movies extends Component {
   state = {
     movies: [],
     isLoaded: false,
-    error: null,
+    error: nu
   };
 
   componentDidMount() {
@@ -20,7 +20,7 @@ export default class Movies extends Component {
   }
 
   render() {
-    const { movies, isLoaded, error } = this.state;
+    const { movies, isLoaded } = this.state;
 
     if (!isLoaded) {
       return <p>Loading...</p>;

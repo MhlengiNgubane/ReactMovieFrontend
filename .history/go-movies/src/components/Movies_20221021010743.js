@@ -20,7 +20,7 @@ export default class Movies extends Component {
   }
 
   render() {
-    const { movies, isLoaded, error } = this.state;
+    const { movies, isLoaded } = this.state;
 
     if (!isLoaded) {
       return <p>Loading...</p>;

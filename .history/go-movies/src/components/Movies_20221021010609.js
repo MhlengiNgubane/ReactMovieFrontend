@@ -5,11 +5,10 @@ export default class Movies extends Component {
   state = {
     movies: [],
     isLoaded: false,
-    error: null,
   };
 
   componentDidMount() {
-    fetch("http://localhost:4000/v1/movies")
+    fetch("http://localhost:4000/v1/moviesn")
       .then((response) => response.json())
       .then((json) => {
         this.setState({
@@ -20,7 +19,7 @@ export default class Movies extends Component {
   }
 
   render() {
-    const { movies, isLoaded, error } = this.state;
+    const { movies, isLoaded } = this.state;
 
     if (!isLoaded) {
       return <p>Loading...</p>;
