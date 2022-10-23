@@ -52,7 +52,6 @@ export default function App() {
               <Route path="/admin">
                 <Admin />
               </Route>
-              
               <Route path="/">
                 <Home />
               </Route>

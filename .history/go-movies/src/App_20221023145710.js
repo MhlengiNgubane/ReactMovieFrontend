@@ -4,7 +4,6 @@ import Movies from "./components/Movies";
 import Home from "./components/Home";
 import Admin from "./components/Admin";
 import OneMovie from "./components/OneMovie";
-import OneGenre from "./components/OneGenre";
 import Genres from "./components/Genres";
 
 export default function App() {
@@ -42,9 +41,7 @@ export default function App() {
               <Route path="/movies">
                 <Movies />
               </Route>
-
-              <Route path="/genre/:id" component={OneGenre} />
-
+              
               <Route exact path="/genres">
                 <Genres />
               </Route>
@@ -52,7 +49,6 @@ export default function App() {
               <Route path="/admin">
                 <Admin />
               </Route>
-              
               <Route path="/">
                 <Home />
               </Route>

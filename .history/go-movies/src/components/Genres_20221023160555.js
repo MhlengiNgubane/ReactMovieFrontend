@@ -47,18 +47,13 @@ export default class Genres extends Component {
 
           <ul>
             {genres.map((m) => (
-              <div className="list-group">
-                <Link
-                  key={m.id}
-                  to={{
-                    pathname: `/genre/${m.id}`,
-                    genreName: m.genre_name,
-                  }}
-                  className="list-group-item list-group-item-action"
-                >
-                  {m.genre_name}
+              <li key={m.id}>
+                <Link to={{
+                  pathname: `/genre/${m.id}`,
+                  genre
+                  }}>{m.genre_name}
                 </Link>
-              </div>
+              </li>
             ))}
           </ul>
         </Fragment>
