@@ -21,7 +21,7 @@ export default class Genres extends Component {
       .then((json) => {
         this.setState(
           {
-            genres: json.genres,
+            mo: json.genres,
             isLoaded: true,
           },
           (error) => {
