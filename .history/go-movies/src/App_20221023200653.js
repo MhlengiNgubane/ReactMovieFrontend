@@ -6,7 +6,6 @@ import Admin from "./components/Admin";
 import OneMovie from "./components/OneMovie";
 import OneGenre from "./components/OneGenre";
 import Genres from "./components/Genres";
-import EditMovie from "./components/EditMovie";
 
 export default function App() {
   return (
