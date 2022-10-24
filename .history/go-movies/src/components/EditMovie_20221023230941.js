@@ -8,16 +8,6 @@ export default class EditMovie extends Component {
     error: null,
   };
 
-  componentDidMount() {
-    this.setState({
-      movie: {
-        title: "The Godfather",
-        mpaa_rating: "R",
-
-      }
-    });
-  }
-
   render() {
     let { movie } = this.state;
     return (
@@ -26,7 +16,7 @@ export default class EditMovie extends Component {
         <hr />
         <form method="post">
           <div className="mb-3">
-            <label htmlFor="title" className="form-label">
+            <label for="title" className="form-label">
               Title
             </label>
             <input
@@ -39,7 +29,7 @@ export default class EditMovie extends Component {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="release_date" className="form-label">
+            <label for="release_date" className="form-label">
               Release date
             </label>
             <input
@@ -52,7 +42,7 @@ export default class EditMovie extends Component {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="runtime" className="form-label">
+            <label for="runtime" className="form-label">
               Runtime
             </label>
             <input
@@ -65,7 +55,7 @@ export default class EditMovie extends Component {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="mpaa_rating" className="form-label">
+            <label for="mpaa_rating" className="form-label">
               MPAA Rating
             </label>
             <select className="form-select" value={movie.mpaa_rating}>
@@ -89,7 +79,7 @@ export default class EditMovie extends Component {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="rating" className="form-label">
+            <label for="rating" className="form-label">
               Rating
             </label>
             <input
@@ -102,27 +92,12 @@ export default class EditMovie extends Component {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="description" className="form-label">
+            <label for="description" className="form-label">
               Description
             </label>
-            <textarea
-              className="form-control"
-              id="description"
-              name="description"
-              rows="3"
-            >
-              {movie.description}
-            </textarea>
+            <texrarea className=""></texrarea>
           </div>
-
-          <hr />
-
-          <button className="btn btn-primary">Save</button>
         </form>
-
-        <div className="mt-3">
-          <pre>{JSON.stringfy(this.state, null, 3)}</pre>
-        </div>
       </Fragment>
     );
   }
