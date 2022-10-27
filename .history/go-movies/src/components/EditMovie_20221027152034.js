@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./EditMovie.css";
 import Input from "./form-components/Input";
-import TextArea from "./form-components/TextArea";
-import Select from "./form-components/Select";
+import TextArea from "./form-components/Input";
 
 export default class EditMovie extends Component {
   state = {
@@ -22,7 +21,6 @@ export default class EditMovie extends Component {
         rating: "",
         description: "",
       },
-      
       isLoaded: false,
       error: null,
     };
@@ -63,7 +61,19 @@ export default class EditMovie extends Component {
             value={movie.id}
             onChange={this.handleChange}
           />
-
+          {/* <div className="mb-3">
+            <label htmlFor="title" className="form-label">
+              Title
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="title"
+              name="title"
+              value={movie.title}
+              onChange={this.handleChange}
+            />
+          </div> */}
           <Input
             title={"Title"}
             type={"text"}
@@ -72,6 +82,19 @@ export default class EditMovie extends Component {
             handleChange={this.handleChange}
           />
 
+          {/* <div className="mb-3">
+            <label htmlFor="release_date" className="form-label">
+              Release date
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="release_date"
+              name="release_date"
+              value={movie.release_date}
+              onChange={this.handleChange}
+            />
+          </div> */}
           <Input
             title={"Release Date"}
             type={"date"}
@@ -88,7 +111,7 @@ export default class EditMovie extends Component {
             handleChange={this.handleChange}
           />
 
-          {/*<div className="mb-3">
+          <div className="mb-3">
             <label htmlFor="mpaa_rating" className="form-label">
               MPAA Rating
             </label>
@@ -115,15 +138,7 @@ export default class EditMovie extends Component {
                 NC17
               </option>
             </select>
-      </div> */}
-      <Select
-        title={'MPAA Rating'}
-        name={'mpaa_rating'}
-        options={this.state.mpaaOptions}
-        value={movie.mpaa_rating}
-        handleChange={this.handleChange}
-        placeholder={'Choose...'}
-      />
+          </div>
 
           <Input
             title={"Rating"}
@@ -135,7 +150,7 @@ export default class EditMovie extends Component {
 
           <TextArea
             title={"Description"}
-            name={"description"}
+            name={'description'}
             value={movie.description}
             rows={"3"}
             handleChange={this.handleChange}
