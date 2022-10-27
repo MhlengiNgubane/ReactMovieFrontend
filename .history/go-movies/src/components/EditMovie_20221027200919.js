@@ -28,7 +28,7 @@ export default class EditMovie extends Component {
         {id: "PG13", value: "PG13"},
         {id: "PG16", value: "PG16"},
         {id: "R18", value: "R18"},
-      ],
+      ]
       isLoaded: false,
       error: null,
     };

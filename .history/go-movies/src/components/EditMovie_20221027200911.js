@@ -22,13 +22,13 @@ export default class EditMovie extends Component {
         rating: "",
         description: "",
       },
-      mpaaOptions: [
+      mpaaOptions: []
         {id: "G", value: "G"},
         {id: "PG", value: "PG"},
         {id: "PG13", value: "PG13"},
         {id: "PG16", value: "PG16"},
         {id: "R18", value: "R18"},
-      ],
+      ]
       isLoaded: false,
       error: null,
     };
