@@ -22,12 +22,12 @@ export default class EditMovie extends Component {
         rating: "",
         description: "",
       },
-      mpaaOptions: [
-        { id: "G", value: "G" },
-        { id: "PG", value: "PG" },
-        { id: "PG13", value: "PG13" },
-        { id: "PG16", value: "PG16" },
-        { id: "R18", value: "R18" },
+      {/* mpaaOptions: [
+        {id: "G", value: "G"},
+        {id: "PG", value: "PG"},
+        {id: "PG13", value: "PG13"},
+        {id: "PG16", value: "PG16"},
+        {id: "R18", value: "R18"},
       ],
       isLoaded: false,
       error: null,
@@ -122,14 +122,14 @@ export default class EditMovie extends Component {
               </option>
             </select>
       </div> */}
-          <Select
-            title={"MPAA Rating"}
-            name={"mpaa_rating"}
-            options={this.state.mpaaOptions}
-            value={movie.mpaa_rating}
-            handleChange={this.handleChange}
-            placeholder={"Choose..."}
-          />
+      <Select
+        title={'MPAA Rating'}
+        name={'mpaa_rating'}
+        options={this.state.mpaaOptions}
+        value={movie.mpaa_rating}
+        handleChange={this.handleChange}
+        placeholder={'Choose...'}
+      />
 
           <Input
             title={"Rating"}
