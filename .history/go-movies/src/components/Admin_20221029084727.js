@@ -59,5 +59,4 @@ export default class Admin extends Component {
         </Fragment>
       );
     }
-  }
 }

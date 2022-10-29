@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-export default class Admin extends Component {
+export default class Movies extends Component {
   state = {
     movies: [],
     isLoaded: false,
@@ -43,14 +43,14 @@ export default class Admin extends Component {
     } else {
       return (
         <Fragment>
-          <h2>Manage Catalogue</h2>
-          <hr />
+          <h2>Choose Movie</h2>
+
           <div className="list-group">
             {movies.map((m) => (
               <Link
                 key={m.id}
+                to={`/movies/${m.id}`}
                 className="list-group-item list-group-item-action"
-                to={`/admin/movie/${m.id}`}
               >
                 {m.title}
               </Link>
