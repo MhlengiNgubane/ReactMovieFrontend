@@ -13,7 +13,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      jwt: "",
+      jwt: "xxx",
     };
     this.handleJWTChange(this.handleJWTChange.bind(this));
   }
@@ -73,9 +73,6 @@ export default class App extends Component {
                     </Fragment>
                   )}
                 </ul>
-                <pre>
-                  {JSON.stringify(this.state, null, 3)}
-                </pre>
               </nav>
             </div>
 
@@ -89,16 +86,19 @@ export default class App extends Component {
 
                 <Route path="/genre/:id" component={OneGenre} />
 
-                <Route exact path="/login" component={(props) => <Login {...props} handleJWTChange={this.handleJWTChange} />} />
+                <Route
+                  exact
+                  path="/login"
+                  component={(props) => (
+                    <Login {...props} handleJWTChange={this.handleJWTChange} />
+                  )}
+                />
 
                 <Route exact path="/genres">
                   <Genres />
                 </Route>
 
-                <Route path="/admin/movie/:id" component={(props) => (
-                  <EditMovie {...props} jwt={this.state.jwt} />
-                )}
-                />
+                <Route path="/admin/movie/:id" component={EditMovie} />
 
                 <Route path="/admin">
                   <Admin />

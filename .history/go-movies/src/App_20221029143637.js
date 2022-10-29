@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Movies from "./components/Movies";
 import Home from "./components/Home";
@@ -29,7 +29,7 @@ export default class App extends Component {
   render() {
     let loginLink;
     if (this.state.jwt === "") {
-      loginLink = <Link to="/login">Login</Link>;
+      loginLink = <Link to="/login">Login</Link> ;
     } else {
       loginLink = (
         <Link to="/logout" onClick={this.logout}>
@@ -73,9 +73,6 @@ export default class App extends Component {
                     </Fragment>
                   )}
                 </ul>
-                <pre>
-                  {JSON.stringify(this.state, null, 3)}
-                </pre>
               </nav>
             </div>
 
@@ -89,16 +86,19 @@ export default class App extends Component {
 
                 <Route path="/genre/:id" component={OneGenre} />
 
-                <Route exact path="/login" component={(props) => <Login {...props} handleJWTChange={this.handleJWTChange} />} />
+                <Route
+                  exact
+                  path="/login"
+                  component={(props) => (
+                    <Login {...props} handleJWTChange={this.handleJWTChange} />
+                  )}
+                />
 
                 <Route exact path="/genres">
                   <Genres />
                 </Route>
 
-                <Route path="/admin/movie/:id" component={(props) => (
-                  <EditMovie {...props} jwt={this.state.jwt} />
-                )}
-                />
+                <Route path="/admin/movie/:id" component={EditMovie} />
 
                 <Route path="/admin">
                   <Admin />

@@ -123,7 +123,7 @@ export default class EditMovie extends Component {
           });
         } else {
           this.props.history.push({
-            pathname: "/home",
+            pathname: "/admin",
           });
         }
       });
