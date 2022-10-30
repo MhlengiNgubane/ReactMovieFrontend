@@ -9,7 +9,6 @@ import Genres from "./components/Genres";
 import EditMovie from "./components/EditMovie";
 import Login from "./components/Login";
 import GraphQL from "./components/GraphQL";
-import OneMovieGraphQL from "./components/OneMovieGraphQL";
 
 export default class App extends Component {
   constructor(props) {
@@ -24,7 +23,7 @@ export default class App extends Component {
     let t = window.localStorage.getItem("jwt");
     if (t) {
       if (this.state.jwt === "") {
-        this.setState({ jwt: JSON.parse(t) });
+        this.setState({jwt: JSON.parse(t)});
       }
     }
   }
@@ -94,7 +93,6 @@ export default class App extends Component {
             <div className="col-md-10">
               <Switch>
                 <Route path="/movies/:id" component={OneMovie} />
-                <Route path="/moviesgraphql/:id" component={OneMovieGraphQL} />
 
                 <Route path="/movies">
                   <Movies />

@@ -9,7 +9,7 @@ import Genres from "./components/Genres";
 import EditMovie from "./components/EditMovie";
 import Login from "./components/Login";
 import GraphQL from "./components/GraphQL";
-import OneMovieGraphQL from "./components/OneMovieGraphQL";
+import OneMovieGraphQL from "./components/OneGraphQL";
 
 export default class App extends Component {
   constructor(props) {
