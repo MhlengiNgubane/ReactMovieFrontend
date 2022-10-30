@@ -156,17 +156,11 @@ export default class EditMovie extends Component {
           label: "Yes",
           onClick: () => {
             // delete the movie
-            const myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Authorization", "Bearer " + this.props.jwt);
-
+            const myHea
             fetch(
               "http://localhost:4000/v1/admin/deletemovie/" +
                 this.state.movie.id,
-              {
-                method: "GET",
-                headers: myHeaders,
-              }
+              { method: "GET" }
             )
               .then((response) => response.json)
               .then((data) => {
