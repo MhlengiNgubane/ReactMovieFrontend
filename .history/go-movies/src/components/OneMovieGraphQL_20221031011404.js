@@ -55,22 +55,20 @@ export default class OneMovieGraphQL extends Component {
       return (
         <Fragment>
           <h2>
-            Movie: {movie.title} ({movie.year})
+            Movie: {movie.title} ({movie.year}) 
           </h2>
 
           {movie.poster !== "" && (
-            <div>
-              <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster}`}
-                alt="poster"
-              />
-            </div>
+              <div>
+                  <img src={`https://image.tmdb.org/t/p/w200${movie.poster}`} alt="poster" />
+              </div>
           )}
 
           <div className="float-start">
             <small>Rating: {movie.mpaa_rating}</small>
           </div>
 
+          
           <div className="float-end">
             {movie.genres.map((m, index) => (
               <span className="badge bg-secondary me-1" key={index}>
