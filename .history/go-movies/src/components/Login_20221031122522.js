@@ -57,7 +57,7 @@ export default class Login extends Component {
       body: JSON.stringify(payload),
     };
 
-    fetch(`${process.env.REACT_APP_API_URL}/v1/signin`, requestOptions)
+    fetch(`${process.env.REACT_APP_API_URL}/v1/signin, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
@@ -75,7 +75,7 @@ export default class Login extends Component {
             JSON.stringify(Object.values(data)[0])
           );
           this.props.history.push({
-            pathname: "/home",
+            pathname: "/admin",
           });
         }
       });

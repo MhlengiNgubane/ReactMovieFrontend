@@ -161,7 +161,7 @@ export default class EditMovie extends Component {
             myHeaders.append("Authorization", "Bearer " + this.props.jwt);
 
             fetch(
-              `${process.env.REACT_APP_API_URL}/v1/admin/deletemovie/` +
+              `${process.env.REACT_APP_API_URL}/v1/admin/deletemovie/ +
                 this.state.movie.id,
               {
                 method: "GET",

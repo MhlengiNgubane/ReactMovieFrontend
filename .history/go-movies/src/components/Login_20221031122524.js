@@ -75,7 +75,7 @@ export default class Login extends Component {
             JSON.stringify(Object.values(data)[0])
           );
           this.props.history.push({
-            pathname: "/home",
+            pathname: "/admin",
           });
         }
       });

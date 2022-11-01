@@ -1,16 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 
-export default class OneGenre extends Component {
+export default class Movies extends Component {
   state = {
     movies: [],
     isLoaded: false,
     error: null,
-    genreName: "",
   };
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_API_URL}/v1/movies/` + this.props.match.params.id)
+    fetch(`"${/v1/movies}`)
       .then((response) => {
         if (response.status !== "200") {
           let err = Error;
@@ -24,7 +23,6 @@ export default class OneGenre extends Component {
           {
             movies: json.movies,
             isLoaded: true,
-            genreName: this.props.location.genreName,
           },
           (error) => {
             this.setState({
@@ -37,12 +35,7 @@ export default class OneGenre extends Component {
   }
 
   render() {
-    let { movies, isLoaded, error, genreName } = this.state;
-
-    if (!movies) {
-      movies = [];
-    }
-
+    const { movies, isLoaded, error } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -50,14 +43,14 @@ export default class OneGenre extends Component {
     } else {
       return (
         <Fragment>
-          <h2>Genre: {genreName}</h2>
-
+          <h2>Choose a movie</h2>
+          <hr />
           <div className="list-group">
             {movies.map((m) => (
               <Link
                 key={m.id}
-                to={`/movies/${m.id}`}
                 className="list-group-item list-group-item-action"
+                to={`/movies/${m.id}`}
               >
                 {m.title}
               </Link>
